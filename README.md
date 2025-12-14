@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Github](https://github.com/s2i61m97o/fm-loopstudios-landing-page)
+- [Live Site](https://s2i61m97o.github.io/fm-loopstudios-landing-page/)
 
 ## My process
 
