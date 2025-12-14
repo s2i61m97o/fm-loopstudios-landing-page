@@ -11,6 +11,7 @@ export default function Card({title, img, screenSize}) {
           screenSize > 1000 ? img.desktop : img.mobile
         })`
       }}
+      alt={img.alt}
       tabIndex="0"
     >
       <h3>{title.toUpperCase()}</h3>

@@ -29,7 +29,7 @@ export default function Header({screenSize}) {
             </button>
 
             <section className={menuClass}>
-              <menu>
+              <ul>
                 <a href="#about">
                   <li>ABOUT</li>
                 </a>
@@ -45,7 +45,7 @@ export default function Header({screenSize}) {
                 <a href="#support">
                   <li>SUPPORT</li>
                 </a>
-              </menu>
+              </ul>
             </section>
           </>
         ) : (
