@@ -1,0 +1,107 @@
+@use "/src/sass/base" as b;
+@use "/src/sass/mixin" as mx;
+
+main {
+  margin: b.$spacing1200 clamp(1.5rem, -1.493rem + 12.77vw, 10rem);
+  text-align: center;
+  @include mx.for-desktop-up {
+    text-align: left;
+  }
+
+
+  h2 {
+    @include mx.txt-prst-4;
+    text-transform: uppercase;
+
+    @include mx.for-tablet-portrait-up {
+      @include mx.txt-prst-2;
+    }
+  }
+
+  .studio-info {
+    position: relative;
+
+
+    img {
+      height: 284px;
+      width: 100%;
+      object-fit: cover;
+
+      @include mx.for-desktop-up {
+        width: fit-content;
+        height: 500px;
+        width: 730px;
+        object-fit: cover;
+      }
+
+      @include mx.for-big-desktop-up {
+        margin-inline: auto;
+        position: relative;
+        right: 15%;
+      }
+    }
+  }
+
+  .info-txt {
+    margin-inline: b.$spacing300;
+
+    @include mx.for-desktop-up {
+      padding-inline-start: clamp(3rem, -3.8182rem + 10.9091vw, 6rem);
+      padding-block-start: clamp(3rem, -3.8182rem + 10.9091vw, 6rem);
+      background-color: white;
+      position: absolute;
+      width: clamp(26.5625rem, 10.2273rem + 26.1364vw, 33.75rem);
+      left: 45%;
+      bottom: -1%;
+    }
+
+    h2 {
+      margin-block: b.$spacing600 b.$spacing200;
+      @include mx.for-tablet-portrait-up {
+        margin-block: b.$spacing600 b.$spacing200;
+      }
+      @include mx.for-desktop-up {
+        margin-block-start: 0;
+      }
+    }
+
+    p {
+      @include mx.txt-prst-6;
+      color: b.$black;
+      opacity: 50%;
+    }
+  }
+
+  .creations {
+    margin-block-start: b.$spacing1200;
+    
+    @include mx.for-desktop-up {
+      margin-block-start: b.$spacing2200;
+    }
+
+    h2 {
+      margin-block-end: b.$spacing600;
+      @include mx.for-tablet-portrait-up {
+        margin-block-end: b.$spacing400;
+      }
+
+      @include mx.for-desktop-up {
+        display: inline;
+      }
+    }
+
+    .card-container {
+      display: grid;
+      gap: b.$spacing300;
+
+      @include mx.for-desktop-up {
+        grid-template: repeat(2, 450px) / repeat(4, 1fr);
+        margin-block: b.$spacing1000 b.$spacing2200;
+      }
+
+      @include mx.for-big-desktop-up {
+        grid-template: 450px / repeat(8, 1fr);
+      }
+    }
+  }
+}

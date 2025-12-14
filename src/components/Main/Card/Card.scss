@@ -1,0 +1,86 @@
+@use "/src/sass/base" as b;
+@use "/src/sass/mixin" as mx;
+
+.creation-card {
+  width: 100%;
+  height: 120px;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  position: relative;
+
+  @include mx.for-desktop-up {
+    height: 100%;
+  }
+
+  h3 {
+    text-align: left;
+    @include mx.txt-prst-5;
+    color: b.$white;
+    margin-inline-start: 1.25rem;
+    margin-block-start: 3.25rem;
+    text-wrap: balance;
+    padding-inline-end: 50%;
+    z-index: 100;
+    position: relative;
+    transition: all 500ms ease-in-out;
+
+    @include mx.for-tablet-portrait-up {
+      padding-inline-end: 75%;
+    }
+
+    @include mx.for-desktop-up {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 80%;
+
+      // Fallback for browser that not supporting calc-size
+      padding-inline-end: 30%;
+    }
+
+    // Support check for calc-size (only Chrome & Edge @ time)
+    @supports (max-width: calc-size(fit-content, size)) {
+      max-width: calc-size(min-content, size + 3ch);
+      padding-inline-end: 0;
+    }
+  }
+}
+
+.creation-card::after {
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: all 500ms ease-in-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+
+
+.creation-card:hover,
+.creation-card:focus-visible {
+  cursor: pointer;
+  h3 {
+    color: b.$black;
+  }
+}
+
+.creation-card:hover::after,
+.creation-card:focus-visible::after {
+  background-color: rgba($color: b.$grey200, $alpha: 0.8);
+}
+
+.creation-card:focus-visible {
+  box-shadow: 0 0 1px 2px b.$black;
+  outline: none;
+
+}
+

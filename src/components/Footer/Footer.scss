@@ -1,0 +1,72 @@
+@use "/src/sass/base" as b;
+@use "/src/sass/mixin" as mx;
+
+footer {
+  background-color: b.$black;
+  color: b.$white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: b.$spacing700;
+
+  @include mx.for-tablet-portrait-up {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: clamp(2.75rem, 0.1786rem + 5.3571vw, 5rem);
+    padding-inline: clamp(2.75rem, -5.8214rem + 17.8571vw, 10.25rem);
+  }
+
+  .nav-container {
+    @include mx.for-tablet-portrait-up {
+      display: flex;
+      flex-direction: column;
+      gap: b.$spacing500;
+    }
+
+    img {
+      margin-block: b.$spacing700;
+      width: 144px;
+      height: 24px;
+
+      @include mx.for-tablet-portrait-up {
+        margin-block: 0;
+      }
+    }
+  }
+
+  .social-container {
+    @include mx.for-tablet-portrait-up {
+      display: flex;
+      flex-direction: column;
+      gap: b.$spacing500;
+      align-items: flex-end;
+    }
+    .social-links {
+      display: flex;
+      gap: b.$spacing200;
+      justify-content: center;
+
+      a {
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      a:focus-visible {
+        outline: solid b.$white 2px;
+        outline-offset: 5px;
+      }
+    }
+
+    p {
+      @include mx.txt-prst-6;
+      opacity: 50%;
+      margin-block-start: b.$spacing200;
+      @include mx.for-tablet-portrait-up {
+        margin: 0;
+      }
+    }
+  }
+}

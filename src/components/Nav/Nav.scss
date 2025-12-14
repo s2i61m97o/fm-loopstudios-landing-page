@@ -1,0 +1,54 @@
+@use "/src/sass/base" as b;
+@use "/src/sass/mixin" as mx;
+
+nav {
+  ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: b.$spacing200;
+    margin-block: b.$spacing500;
+
+    @include mx.for-tablet-portrait-up {
+      flex-direction: row;
+      margin: 0;
+    }
+
+    li {
+      list-style: none;
+      width: fit-content;
+      @include mx.txt-prst-6;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        position: relative;
+        display: inline-block;
+      }
+    }
+
+    // Hover effect inc. transition
+    a::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 50%;
+      background-color: b.$white;
+      left: 25%;
+      bottom: 0;
+      transform: scaleX(0);
+      transition: transform 250ms linear;
+    }
+
+    a:hover:after {
+      transform: scaleX(1);
+    }
+
+    a:focus-visible {
+      outline: 1px solid b.$white;
+      outline-offset: 10px;
+      border-radius: 5px;
+    }
+  } 
+} 

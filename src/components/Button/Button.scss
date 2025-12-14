@@ -1,0 +1,30 @@
+@use "/src/sass/base" as b;
+@use "/src/sass/mixin" as mx;
+
+button {
+  @include mx.txt-prst-7;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: b.$black 1px solid;
+  padding: b.$spacing150 b.$spacing500;
+  margin-block: b.$spacing400;
+  max-width: fit-content;
+}
+
+@include mx.for-desktop-up {
+    button{
+      margin-block: 0;
+      vertical-align: text-bottom;
+      float: inline-end;
+      
+    }
+
+    button:hover,
+    button:focus-visible {
+        background: b.$black;
+        color: b.$white;
+        outline: none;
+        cursor: pointer;
+    }
+}
+

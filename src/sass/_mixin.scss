@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,300;1,300&display=swap");
+
+// TEXT PRESETS
+
+@mixin txt-prst-1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 4.5rem;
+}
+@mixin txt-prst-2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(2rem, 0.913rem + 2.3188vw, 3rem);
+  line-height: 100%;
+}
+@mixin txt-prst-3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(2rem, -0.9091rem + 14.5455vw, 2.5rem);
+}
+@mixin txt-prst-4 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2rem;
+}
+@mixin txt-prst-5 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  line-height: normal;
+}
+
+@mixin txt-prst-6 {
+  font-family: "Alata", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 165%;
+}
+@mixin txt-prst-7 {
+  font-family: "Alata", sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 5px;
+}
+
+// SCREEN BREAKPOINTS
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 750px) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
